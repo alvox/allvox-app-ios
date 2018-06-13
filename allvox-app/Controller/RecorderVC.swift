@@ -13,7 +13,7 @@ class RecorderVC: UIViewController {
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var recBtn: UIButton!
     
-    var recording = false
+    let recorder = Recorder()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,13 +25,13 @@ class RecorderVC: UIViewController {
     }
 
     @IBAction func recBtnPressed(_ sender: Any) {
-        if recording {
-            recording = false
+        if recorder.isRecording {
+            recorder.stopRecording()
             spinner.isHidden = true
             spinner.stopAnimating()
             recBtn.setTitle("REC", for: .normal)
         } else {
-            recording = true
+            recorder.startRecording()
             spinner.isHidden = false
             spinner.startAnimating()
             recBtn.setTitle("STOP", for: .normal)
