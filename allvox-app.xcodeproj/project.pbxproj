@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		61B3934220D1D1FF00704E4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B3934120D1D1FF00704E4D /* AppDelegate.swift */; };
-		61B3934420D1D1FF00704E4D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B3934320D1D1FF00704E4D /* ViewController.swift */; };
+		61B3934420D1D1FF00704E4D /* RecorderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B3934320D1D1FF00704E4D /* RecorderVC.swift */; };
 		61B3934720D1D1FF00704E4D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61B3934520D1D1FF00704E4D /* Main.storyboard */; };
 		61B3934920D1D20000704E4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61B3934820D1D20000704E4D /* Assets.xcassets */; };
 		61B3934C20D1D20000704E4D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61B3934A20D1D20000704E4D /* LaunchScreen.storyboard */; };
@@ -17,7 +17,7 @@
 /* Begin PBXFileReference section */
 		61B3933E20D1D1FF00704E4D /* allvox-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "allvox-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		61B3934120D1D1FF00704E4D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		61B3934320D1D1FF00704E4D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		61B3934320D1D1FF00704E4D /* RecorderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecorderVC.swift; sourceTree = "<group>"; };
 		61B3934620D1D1FF00704E4D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		61B3934820D1D20000704E4D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		61B3934B20D1D20000704E4D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -54,14 +54,22 @@
 		61B3934020D1D1FF00704E4D /* allvox-app */ = {
 			isa = PBXGroup;
 			children = (
+				61B3935320D1D2B700704E4D /* Controller */,
 				61B3934120D1D1FF00704E4D /* AppDelegate.swift */,
-				61B3934320D1D1FF00704E4D /* ViewController.swift */,
 				61B3934520D1D1FF00704E4D /* Main.storyboard */,
 				61B3934820D1D20000704E4D /* Assets.xcassets */,
 				61B3934A20D1D20000704E4D /* LaunchScreen.storyboard */,
 				61B3934D20D1D20000704E4D /* Info.plist */,
 			);
 			path = "allvox-app";
+			sourceTree = "<group>";
+		};
+		61B3935320D1D2B700704E4D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				61B3934320D1D1FF00704E4D /* RecorderVC.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,7 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				61B3934420D1D1FF00704E4D /* ViewController.swift in Sources */,
+				61B3934420D1D1FF00704E4D /* RecorderVC.swift in Sources */,
 				61B3934220D1D1FF00704E4D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
