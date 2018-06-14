@@ -13,6 +13,7 @@
 		61B3934920D1D20000704E4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61B3934820D1D20000704E4D /* Assets.xcassets */; };
 		61B3934C20D1D20000704E4D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61B3934A20D1D20000704E4D /* LaunchScreen.storyboard */; };
 		61B3935520D1D99600704E4D /* Recorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B3935420D1D99600704E4D /* Recorder.swift */; };
+		61C33E9920D3307F009ED5B2 /* FileUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C33E9820D3307F009ED5B2 /* FileUtil.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		61B3934B20D1D20000704E4D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		61B3934D20D1D20000704E4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		61B3935420D1D99600704E4D /* Recorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recorder.swift; sourceTree = "<group>"; };
+		61C33E9820D3307F009ED5B2 /* FileUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUtil.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		61B3934020D1D1FF00704E4D /* allvox-app */ = {
 			isa = PBXGroup;
 			children = (
+				61C33E9720D33069009ED5B2 /* Util */,
 				61B3935320D1D2B700704E4D /* Controller */,
 				61B3934120D1D1FF00704E4D /* AppDelegate.swift */,
 				61B3934520D1D1FF00704E4D /* Main.storyboard */,
@@ -73,6 +76,14 @@
 				61B3934320D1D1FF00704E4D /* RecorderVC.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		61C33E9720D33069009ED5B2 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				61C33E9820D3307F009ED5B2 /* FileUtil.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,6 +160,7 @@
 				61B3935520D1D99600704E4D /* Recorder.swift in Sources */,
 				61B3934420D1D1FF00704E4D /* RecorderVC.swift in Sources */,
 				61B3934220D1D1FF00704E4D /* AppDelegate.swift in Sources */,
+				61C33E9920D3307F009ED5B2 /* FileUtil.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
