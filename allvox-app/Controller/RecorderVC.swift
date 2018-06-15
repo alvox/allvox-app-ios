@@ -14,10 +14,11 @@ class RecorderVC: UIViewController {
     @IBOutlet weak var recBtn: UIButton!
     
     let recorder = Recorder()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         spinner.isHidden = true
+        recorder.prepare()
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,7 +27,7 @@ class RecorderVC: UIViewController {
 
     @IBAction func recBtnPressed(_ sender: Any) {
         if recorder.isRecording {
-            recorder.stopRecording()
+            recorder.stopRecording(success: true)
             spinner.isHidden = true
             spinner.stopAnimating()
             recBtn.setTitle("REC", for: .normal)
