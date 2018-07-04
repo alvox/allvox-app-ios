@@ -16,6 +16,7 @@
 		61B3935520D1D99600704E4D /* Recorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B3935420D1D99600704E4D /* Recorder.swift */; };
 		61C33E9920D3307F009ED5B2 /* FileUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C33E9820D3307F009ED5B2 /* FileUtil.swift */; };
 		61CA767420ED83FF00C99CF5 /* alvox-app.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 61CA767220ED83FF00C99CF5 /* alvox-app.xcdatamodeld */; };
+		61CA767620ED8A1600C99CF5 /* Datalayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61CA767520ED8A1600C99CF5 /* Datalayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		61B3935420D1D99600704E4D /* Recorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recorder.swift; sourceTree = "<group>"; };
 		61C33E9820D3307F009ED5B2 /* FileUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUtil.swift; sourceTree = "<group>"; };
 		61CA767320ED83FF00C99CF5 /* alvox-app.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "alvox-app.xcdatamodel"; sourceTree = "<group>"; };
+		61CA767520ED8A1600C99CF5 /* Datalayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Datalayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				61C33E9820D3307F009ED5B2 /* FileUtil.swift */,
+				61CA767520ED8A1600C99CF5 /* Datalayer.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 			files = (
 				61B3935520D1D99600704E4D /* Recorder.swift in Sources */,
 				61B3934420D1D1FF00704E4D /* RecorderVC.swift in Sources */,
+				61CA767620ED8A1600C99CF5 /* Datalayer.swift in Sources */,
 				61B3934220D1D1FF00704E4D /* AppDelegate.swift in Sources */,
 				61C33E9920D3307F009ED5B2 /* FileUtil.swift in Sources */,
 				61CA767420ED83FF00C99CF5 /* alvox-app.xcdatamodeld in Sources */,

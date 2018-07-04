@@ -13,6 +13,7 @@ class Recorder: NSObject, AVAudioRecorderDelegate {
     
     private var session: AVAudioSession!
     private var audioRecorder: AVAudioRecorder!
+    private var fileName: URL?
     
     private(set) public var isRecording: Bool
     
@@ -31,9 +32,9 @@ class Recorder: NSObject, AVAudioRecorderDelegate {
     func startRecording() {
         isRecording = true
         print("Start recoding")
-        let audioFileName = newRecordingFileName()
+        fileName = newRecordingFileName()
         do {
-            audioRecorder = try AVAudioRecorder(url: audioFileName, settings: audioFileSettings)
+            audioRecorder = try AVAudioRecorder(url: fileName!, settings: audioFileSettings)
             audioRecorder.delegate = self
             audioRecorder.record()
         } catch {
@@ -47,6 +48,11 @@ class Recorder: NSObject, AVAudioRecorderDelegate {
         audioRecorder.stop()
         audioRecorder = nil
         if success {
+            saveRecording(forFile: fileName!) { (success) in
+                if success {
+                    print("Recording saved")
+                }
+            }
             print("Recording was successful")
         } else {
             print("Recording attempt failed!!!")
