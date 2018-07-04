@@ -15,6 +15,7 @@
 		61B3934C20D1D20000704E4D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61B3934A20D1D20000704E4D /* LaunchScreen.storyboard */; };
 		61B3935520D1D99600704E4D /* Recorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B3935420D1D99600704E4D /* Recorder.swift */; };
 		61C33E9920D3307F009ED5B2 /* FileUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C33E9820D3307F009ED5B2 /* FileUtil.swift */; };
+		61CA767420ED83FF00C99CF5 /* alvox-app.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 61CA767220ED83FF00C99CF5 /* alvox-app.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		61B3934D20D1D20000704E4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		61B3935420D1D99600704E4D /* Recorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recorder.swift; sourceTree = "<group>"; };
 		61C33E9820D3307F009ED5B2 /* FileUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUtil.swift; sourceTree = "<group>"; };
+		61CA767320ED83FF00C99CF5 /* alvox-app.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "alvox-app.xcdatamodel"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +46,7 @@
 		61B3933520D1D1FF00704E4D = {
 			isa = PBXGroup;
 			children = (
+				61CA767220ED83FF00C99CF5 /* alvox-app.xcdatamodeld */,
 				61B3934020D1D1FF00704E4D /* allvox-app */,
 				61B3933F20D1D1FF00704E4D /* Products */,
 			);
@@ -164,6 +167,7 @@
 				61B3934420D1D1FF00704E4D /* RecorderVC.swift in Sources */,
 				61B3934220D1D1FF00704E4D /* AppDelegate.swift in Sources */,
 				61C33E9920D3307F009ED5B2 /* FileUtil.swift in Sources */,
+				61CA767420ED83FF00C99CF5 /* alvox-app.xcdatamodeld in Sources */,
 				61481E4120D43BF800B3DF39 /* LibraryVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -362,6 +366,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		61CA767220ED83FF00C99CF5 /* alvox-app.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				61CA767320ED83FF00C99CF5 /* alvox-app.xcdatamodel */,
+			);
+			currentVersion = 61CA767320ED83FF00C99CF5 /* alvox-app.xcdatamodel */;
+			path = "alvox-app.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 61B3933620D1D1FF00704E4D /* Project object */;
 }
