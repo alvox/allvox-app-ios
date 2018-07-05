@@ -10,19 +10,17 @@ import UIKit
 
 class RecordingCell: UITableViewCell {
     
-    
-    @IBOutlet weak var idLbl: UILabel!
     @IBOutlet weak var nameLbl: UILabel!
-    @IBOutlet weak var urlLbl: UILabel!
-    @IBOutlet weak var durationLbl: UILabel!
     @IBOutlet weak var dateLbl: UILabel!
+    @IBOutlet weak var durationLbl: UILabel!
+    
+    private var filePath: URL!
     
     func configureCell(withRecording recording: Recording) {
-        self.idLbl.text = recording.id?.uuidString
         self.nameLbl.text = recording.name
-        self.urlLbl.text = recording.path?.absoluteString
-        self.durationLbl.text = String(describing: recording.duration)
-        self.dateLbl.text = recording.timestamp?.description
+        self.durationLbl.text = formatDuration(seconds: recording.duration)
+        self.dateLbl.text = formatDate(date: recording.timestamp)
+        self.filePath = recording.path
     }
     
     override func awakeFromNib() {
@@ -34,6 +32,21 @@ class RecordingCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    private func formatDuration(seconds: Int64) -> String {
+        let (h, m, s) = (seconds / 3600, (seconds % 3600) / 60, (seconds % 3600) % 60)
+        return String(format: "%1.2d:%1.2d:%1.2d", h, m, s)
+    }
+    
+    private func formatDate(date: Date?) -> String {
+        if let date = date {
+            let formatter = DateFormatter()
+            formatter.dateStyle = .medium
+            formatter.timeStyle = .short
+            return formatter.string(for: date)!
+        }
+        return ""
     }
 
 }
