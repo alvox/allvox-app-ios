@@ -13,7 +13,7 @@ class Recorder: NSObject, AVAudioRecorderDelegate {
     
     private var session: AVAudioSession!
     private var audioRecorder: AVAudioRecorder!
-    private var fileName: URL?
+    private var recInfo: RecordingInfo?
     
     private(set) public var isRecording: Bool
     
@@ -32,9 +32,9 @@ class Recorder: NSObject, AVAudioRecorderDelegate {
     func startRecording() {
         isRecording = true
         print("Start recoding")
-        fileName = newRecordingFileName()
+        recInfo = RecordingInfo()
         do {
-            audioRecorder = try AVAudioRecorder(url: fileName!, settings: audioFileSettings)
+            audioRecorder = try AVAudioRecorder(url: (recInfo?.path)!, settings: audioFileSettings)
             audioRecorder.delegate = self
             audioRecorder.record()
         } catch {
@@ -44,19 +44,17 @@ class Recorder: NSObject, AVAudioRecorderDelegate {
     }
     
     func stopRecording(success: Bool) {
+        recInfo?.finalize()
         isRecording = false
         audioRecorder.stop()
         audioRecorder = nil
         if success {
-            saveRecording(forFile: fileName!) { (success) in
-                if success {
-                    print("Recording saved")
-                }
-            }
+            saveRecording(from: recInfo!)
             print("Recording was successful")
         } else {
             print("Recording attempt failed!!!")
         }
+        recInfo = nil
     }
     
     func prepare() {
@@ -81,3 +79,34 @@ class Recorder: NSObject, AVAudioRecorderDelegate {
     }
     
 }
+
+struct RecordingInfo {
+    
+    var id: UUID
+    var date: Date?
+    var name: String?
+    var path: URL
+    var duration: Int?
+    
+    init() {
+        self.id = UUID()
+        self.path = newRecordingFilePath(from: id)
+    }
+    
+    mutating func finalize() {
+        self.date = Date()
+        self.name = newRecordingName(from: date!)
+        self.duration = 0 //todo
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+

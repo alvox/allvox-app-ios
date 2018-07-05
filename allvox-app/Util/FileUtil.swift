@@ -13,7 +13,13 @@ func getDocumentsDirectory() -> URL {
     return paths[0]
 }
 
-func newRecordingFileName() -> URL {
-    // todo: generate file name based on timestamp
-    return getDocumentsDirectory().appendingPathComponent("test-recording.m4a")
+func newRecordingFilePath(from uuid: UUID) -> URL {
+    let id = uuid.uuidString
+    return getDocumentsDirectory().appendingPathComponent("\(id).m4a")
+}
+
+func newRecordingName(from date: Date) -> String {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+    return formatter.string(from: date)
 }
