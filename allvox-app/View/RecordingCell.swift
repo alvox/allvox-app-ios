@@ -16,6 +16,7 @@ class RecordingCell: UITableViewCell {
     @IBOutlet weak var playBtn: UIButton!
     
     private var filePath: URL!
+    private var isPlaying: Bool = false
     
     func configureCell(withRecording recording: Recording) {
         self.nameLbl.text = recording.name
@@ -36,6 +37,13 @@ class RecordingCell: UITableViewCell {
     }
     
     @IBAction func playBtnPressed(_ sender: Any) {
+        if isPlaying {
+            Player.instance.stop()
+            isPlaying = false
+        } else {
+            Player.instance.play(filePath: filePath)
+            isPlaying = true
+        }
     }
     
     private func formatDuration(seconds: Int64) -> String {
