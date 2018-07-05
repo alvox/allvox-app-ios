@@ -44,9 +44,9 @@ class Recorder: NSObject, AVAudioRecorderDelegate {
     }
     
     func stopRecording(success: Bool) {
-        recInfo?.finalize()
-        isRecording = false
+        recInfo?.finalize(duration: audioRecorder.currentTime)
         audioRecorder.stop()
+        isRecording = false
         audioRecorder = nil
         if success {
             saveRecording(from: recInfo!)
@@ -83,9 +83,9 @@ class Recorder: NSObject, AVAudioRecorderDelegate {
 struct RecordingInfo {
     
     var id: UUID
+    var path: URL
     var date: Date?
     var name: String?
-    var path: URL
     var duration: Int?
     
     init() {
@@ -93,10 +93,10 @@ struct RecordingInfo {
         self.path = newRecordingFilePath(from: id)
     }
     
-    mutating func finalize() {
+    mutating func finalize(duration: TimeInterval) {
         self.date = Date()
         self.name = newRecordingName(from: date!)
-        self.duration = 0 //todo
+        self.duration = Int(duration.rounded())
     }
     
 }
