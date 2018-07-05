@@ -29,3 +29,14 @@ func saveRecording(forFile path: URL, completion: (_ finished: Bool) -> ()) {
     }
     
 }
+
+func getAllRecordings() -> [Recording] {
+    guard let ctx = appDelegate?.persistentContainer.viewContext else {return []}
+    let request = NSFetchRequest<Recording>(entityName: "Recording")
+    do {
+        return try ctx.fetch(request)
+    } catch {
+        debugPrint("Failed to get recordings from the db: \(error)")
+        return []
+    }
+}

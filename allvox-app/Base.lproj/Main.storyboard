@@ -103,13 +103,63 @@
                                 <rect key="frame" x="0.0" y="70" width="375" height="597"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="libraryCell" rowHeight="70" id="xwj-oU-2wd">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="recordingCell" rowHeight="70" id="xwj-oU-2wd" customClass="RecordingCell" customModule="allvox_app" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xwj-oU-2wd" id="Oa1-Gi-wYK">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="-5" translatesAutoresizingMaskIntoConstraints="NO" id="hqZ-xy-hTm">
+                                                    <rect key="frame" x="8" y="0.0" width="359" height="69.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="id" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="05I-iS-qpS">
+                                                            <rect key="frame" x="0.0" y="0.0" width="11" height="18"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="12"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ilf-Y3-1mu">
+                                                            <rect key="frame" x="0.0" y="13" width="31.5" height="18"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="12"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="URL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wzY-pN-Euh">
+                                                            <rect key="frame" x="0.0" y="26" width="22.5" height="17.5"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="12"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="duration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hlb-vS-nWM">
+                                                            <rect key="frame" x="0.0" y="38.5" width="47" height="18"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="12"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MNG-Dj-6Rz">
+                                                            <rect key="frame" x="0.0" y="51.5" width="25.5" height="18"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="12"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="hqZ-xy-hTm" firstAttribute="leading" secondItem="Oa1-Gi-wYK" secondAttribute="leading" constant="8" id="7AL-rf-sB9"/>
+                                                <constraint firstAttribute="trailing" secondItem="hqZ-xy-hTm" secondAttribute="trailing" constant="8" id="PmE-p2-6Zg"/>
+                                                <constraint firstItem="hqZ-xy-hTm" firstAttribute="top" secondItem="Oa1-Gi-wYK" secondAttribute="top" id="baO-7f-oL7"/>
+                                                <constraint firstAttribute="bottom" secondItem="hqZ-xy-hTm" secondAttribute="bottom" id="kPz-AJ-4hm"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dateLbl" destination="MNG-Dj-6Rz" id="MSo-Ah-9uv"/>
+                                            <outlet property="durationLbl" destination="hlb-vS-nWM" id="RlO-LN-ux9"/>
+                                            <outlet property="idLbl" destination="05I-iS-qpS" id="HOs-vW-Me4"/>
+                                            <outlet property="nameLbl" destination="ilf-Y3-1mu" id="QOb-Ez-yKz"/>
+                                            <outlet property="urlLbl" destination="wzY-pN-Euh" id="iUV-NP-RRL"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

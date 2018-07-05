@@ -17,6 +17,7 @@
 		61C33E9920D3307F009ED5B2 /* FileUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C33E9820D3307F009ED5B2 /* FileUtil.swift */; };
 		61CA767620ED8A1600C99CF5 /* Datalayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61CA767520ED8A1600C99CF5 /* Datalayer.swift */; };
 		61CA767920ED8FED00C99CF5 /* allvox-app.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 61CA767720ED8FED00C99CF5 /* allvox-app.xcdatamodeld */; };
+		61CA767C20ED90DA00C99CF5 /* RecordingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61CA767B20ED90DA00C99CF5 /* RecordingCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		61C33E9820D3307F009ED5B2 /* FileUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUtil.swift; sourceTree = "<group>"; };
 		61CA767520ED8A1600C99CF5 /* Datalayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Datalayer.swift; sourceTree = "<group>"; };
 		61CA767820ED8FED00C99CF5 /* allvox-app.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "allvox-app.xcdatamodel"; sourceTree = "<group>"; };
+		61CA767B20ED90DA00C99CF5 /* RecordingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 		61B3934020D1D1FF00704E4D /* allvox-app */ = {
 			isa = PBXGroup;
 			children = (
+				61CA767A20ED90B100C99CF5 /* View */,
 				61C33E9720D33069009ED5B2 /* Util */,
 				61B3935320D1D2B700704E4D /* Controller */,
 				61B3934120D1D1FF00704E4D /* AppDelegate.swift */,
@@ -93,6 +96,14 @@
 				61CA767520ED8A1600C99CF5 /* Datalayer.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		61CA767A20ED90B100C99CF5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				61CA767B20ED90DA00C99CF5 /* RecordingCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,6 +180,7 @@
 				61B3935520D1D99600704E4D /* Recorder.swift in Sources */,
 				61B3934420D1D1FF00704E4D /* RecorderVC.swift in Sources */,
 				61CA767620ED8A1600C99CF5 /* Datalayer.swift in Sources */,
+				61CA767C20ED90DA00C99CF5 /* RecordingCell.swift in Sources */,
 				61CA767920ED8FED00C99CF5 /* allvox-app.xcdatamodeld in Sources */,
 				61B3934220D1D1FF00704E4D /* AppDelegate.swift in Sources */,
 				61C33E9920D3307F009ED5B2 /* FileUtil.swift in Sources */,
