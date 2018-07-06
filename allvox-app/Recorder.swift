@@ -11,6 +11,8 @@ import AVFoundation
 
 class Recorder: NSObject, AVAudioRecorderDelegate {
     
+    static let instance = Recorder()
+    
     private var session: AVAudioSession!
     private var audioRecorder: AVAudioRecorder!
     private var recInfo: RecordingInfo?

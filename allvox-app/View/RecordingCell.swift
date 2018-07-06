@@ -13,8 +13,10 @@ class RecordingCell: UITableViewCell {
     @IBOutlet weak var nameLbl: UILabel!
     @IBOutlet weak var dateLbl: UILabel!
     @IBOutlet weak var durationLbl: UILabel!
+    @IBOutlet weak var playBtn: UIButton!
     
     private var filePath: URL!
+    private var isPlaying: Bool = false
     
     func configureCell(withRecording recording: Recording) {
         self.nameLbl.text = recording.name
@@ -32,6 +34,16 @@ class RecordingCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    @IBAction func playBtnPressed(_ sender: Any) {
+        if isPlaying {
+            Player.instance.stop()
+            isPlaying = false
+        } else {
+            Player.instance.play(filePath: filePath)
+            isPlaying = true
+        }
     }
     
     private func formatDuration(seconds: Int64) -> String {
