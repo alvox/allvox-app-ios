@@ -35,6 +35,12 @@ class LibraryVC: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    private func delete(idx: Int) {
+        let recording = recordings.remove(at: idx)
+        deleteRecording(recording: recording)
+        deleteFile(withName: recording.name!)
+    }
+    
 }
 
 extension LibraryVC: UITableViewDelegate, UITableViewDataSource {
@@ -54,5 +60,19 @@ extension LibraryVC: UITableViewDelegate, UITableViewDataSource {
         cell.configureCell(withRecording: recording)
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            delete(idx: indexPath.row)
+            tableView.beginUpdates()
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            tableView.endUpdates()
+        }
+    }
+    
     
 }

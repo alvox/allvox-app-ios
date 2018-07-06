@@ -38,6 +38,11 @@ func getAllRecordings() -> [Recording] {
     }
 }
 
+func deleteRecording(recording: Recording) {
+    guard let ctx = appDelegate?.persistentContainer.viewContext else {return}
+    ctx.delete(recording)
+}
+
 func deleteRecording(id: UUID) {
     guard let ctx = appDelegate?.persistentContainer.viewContext else {return}
     let request = NSFetchRequest<Recording>()

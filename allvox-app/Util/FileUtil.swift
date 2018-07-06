@@ -23,3 +23,7 @@ func newRecordingName(from date: Date) -> String {
     formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
     return formatter.string(from: date)
 }
+
+func deleteFile(withName name: String) {
+    // todo: implement
+}
