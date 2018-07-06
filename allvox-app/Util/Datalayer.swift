@@ -37,3 +37,19 @@ func getAllRecordings() -> [Recording] {
         return []
     }
 }
+
+func deleteRecording(id: UUID) {
+    guard let ctx = appDelegate?.persistentContainer.viewContext else {return}
+    let request = NSFetchRequest<Recording>()
+    request.predicate = NSPredicate.init(format: "id == \(id)")
+    if let result = try? ctx.fetch(request) {
+        for object in result {
+            ctx.delete(object)
+        }
+    }
+    do {
+        try ctx.save()
+    } catch {
+        debugPrint("Error while deleting object, \(error)")
+    }
+}
