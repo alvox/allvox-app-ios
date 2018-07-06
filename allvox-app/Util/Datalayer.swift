@@ -15,9 +15,9 @@ func saveRecording(from recInfo: RecordingInfo) {
     guard let ctx = appDelegate?.persistentContainer.viewContext else {return}
     let recording = Recording(context: ctx)
     recording.id = recInfo.id
-    recording.name = recInfo.name
+    recording.displayName = recInfo.name
     recording.duration = Int64(recInfo.duration!)
-    recording.path = recInfo.path
+    recording.fileName = recInfo.path.lastPathComponent
     recording.timestamp = recInfo.date
     do {
         try ctx.save()
@@ -41,6 +41,11 @@ func getAllRecordings() -> [Recording] {
 func deleteRecording(recording: Recording) {
     guard let ctx = appDelegate?.persistentContainer.viewContext else {return}
     ctx.delete(recording)
+    do {
+        try ctx.save()
+    } catch {
+        debugPrint("Can't delete file, \(error)")
+    }
 }
 
 func deleteRecording(id: UUID) {

@@ -15,14 +15,14 @@ class RecordingCell: UITableViewCell {
     @IBOutlet weak var durationLbl: UILabel!
     @IBOutlet weak var playBtn: UIButton!
     
-    private var filePath: URL!
+    private var fileName: String!
     private var isPlaying: Bool = false
     
     func configureCell(withRecording recording: Recording) {
-        self.nameLbl.text = recording.name
+        self.nameLbl.text = recording.displayName
         self.durationLbl.text = formatDuration(seconds: recording.duration)
         self.dateLbl.text = formatDate(date: recording.timestamp)
-        self.filePath = recording.path
+        self.fileName = recording.fileName
     }
     
     override func awakeFromNib() {
@@ -41,7 +41,7 @@ class RecordingCell: UITableViewCell {
             Player.instance.stop()
             isPlaying = false
         } else {
-            Player.instance.play(filePath: filePath)
+            Player.instance.play(fileName: fileName)
             isPlaying = true
         }
     }

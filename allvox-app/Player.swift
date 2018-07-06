@@ -16,12 +16,14 @@ class Player: NSObject, AVAudioPlayerDelegate {
     private var audioPlayer: AVAudioPlayer?
     private var isPlaying: Bool = false
     
-    func play(filePath: URL) {
+    func play(fileName: String) {
+        let filePath = getFilePath(for: fileName)
         do {
             audioPlayer = try AVAudioPlayer(contentsOf: filePath)
             audioPlayer?.play()
         } catch {
             debugPrint("Can't play file \(error)")
+            audioPlayer = nil
         }
     }
     

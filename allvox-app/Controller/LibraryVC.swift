@@ -37,8 +37,8 @@ class LibraryVC: UIViewController {
     
     private func delete(idx: Int) {
         let recording = recordings.remove(at: idx)
+        deleteFile(withName: recording.fileName!)
         deleteRecording(recording: recording)
-        deleteFile(withName: recording.name!)
     }
     
 }
