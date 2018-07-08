@@ -74,6 +74,13 @@ class Recorder: NSObject, AVAudioRecorderDelegate {
         }
     }
     
+    func getTime() -> TimeInterval {
+        if let audioRecorder = audioRecorder {
+            return audioRecorder.currentTime
+        }
+        return 0
+    }
+    
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
         if !flag {
             stopRecording(success: false)

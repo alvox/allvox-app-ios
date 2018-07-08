@@ -11,10 +11,14 @@ import UIKit
 class RecorderVC: UIViewController {
     
     @IBOutlet weak var spinner: UIActivityIndicatorView!
+    @IBOutlet weak var timerLbl: UILabel!
     @IBOutlet weak var recBtn: UIButton!
+    
+    private var timer: Timer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(setTime), userInfo: nil, repeats: true)
         spinner.isHidden = true
         Recorder.instance.prepare()
         startRecording()
@@ -44,6 +48,12 @@ class RecorderVC: UIViewController {
             spinner.startAnimating()
             recBtn.setTitle("STOP", for: .normal)
         }
+    }
+    
+    @objc func setTime() {
+        let time = String(format: "%0.0f sec", Recorder.instance.getTime())
+        timerLbl.text = time
+        
     }
     
 }

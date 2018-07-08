@@ -80,19 +80,28 @@
                                 </constraints>
                                 <color key="color" red="0.16078431369999999" green="0.16862745100000001" blue="0.20392156859999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l15-WR-6wg">
+                                <rect key="frame" x="125" y="150" width="124" height="35"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Heavy" family="Avenir Next" pointSize="25"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.69803921570000005" green="0.86666666670000003" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="lec-yT-Oum" secondAttribute="bottom" constant="100" id="AIw-rr-bLz"/>
                             <constraint firstItem="Vbr-Ap-q4b" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="KDp-3C-Prh"/>
                             <constraint firstItem="Vbr-Ap-q4b" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="e9a-ab-sli"/>
+                            <constraint firstItem="l15-WR-6wg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="130" id="kSG-SD-Mbc"/>
                             <constraint firstItem="lec-yT-Oum" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mjW-l3-Tt9"/>
+                            <constraint firstItem="l15-WR-6wg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yuW-dv-plK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="recBtn" destination="lec-yT-Oum" id="GJl-Db-wD8"/>
                         <outlet property="spinner" destination="Vbr-Ap-q4b" id="2Xx-uP-27x"/>
+                        <outlet property="timerLbl" destination="l15-WR-6wg" id="28R-Gp-FF8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
