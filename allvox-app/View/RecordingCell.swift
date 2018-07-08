@@ -46,11 +46,6 @@ class RecordingCell: UITableViewCell {
         }
     }
     
-    private func formatDuration(seconds: Int64) -> String {
-        let (h, m, s) = (seconds / 3600, (seconds % 3600) / 60, (seconds % 3600) % 60)
-        return String(format: "%1.2d:%1.2d:%1.2d", h, m, s)
-    }
-    
     private func formatDate(date: Date?) -> String {
         if let date = date {
             let formatter = DateFormatter()

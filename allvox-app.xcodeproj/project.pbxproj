@@ -17,6 +17,7 @@
 		61BFC27C20EED118000B58FC /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61BFC27B20EED118000B58FC /* Player.swift */; };
 		61BFC27E20F23FA8000B58FC /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61BFC27D20F23FA8000B58FC /* MainVC.swift */; };
 		61BFC28220F24614000B58FC /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61BFC28120F24614000B58FC /* TabBarVC.swift */; };
+		61BFC28420F25D18000B58FC /* FormatUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61BFC28320F25D18000B58FC /* FormatUtil.swift */; };
 		61C33E9920D3307F009ED5B2 /* FileUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C33E9820D3307F009ED5B2 /* FileUtil.swift */; };
 		61CA767620ED8A1600C99CF5 /* Datalayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61CA767520ED8A1600C99CF5 /* Datalayer.swift */; };
 		61CA767920ED8FED00C99CF5 /* allvox-app.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 61CA767720ED8FED00C99CF5 /* allvox-app.xcdatamodeld */; };
@@ -36,6 +37,7 @@
 		61BFC27B20EED118000B58FC /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		61BFC27D20F23FA8000B58FC /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		61BFC28120F24614000B58FC /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
+		61BFC28320F25D18000B58FC /* FormatUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatUtil.swift; sourceTree = "<group>"; };
 		61C33E9820D3307F009ED5B2 /* FileUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUtil.swift; sourceTree = "<group>"; };
 		61CA767520ED8A1600C99CF5 /* Datalayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Datalayer.swift; sourceTree = "<group>"; };
 		61CA767820ED8FED00C99CF5 /* allvox-app.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "allvox-app.xcdatamodel"; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 			children = (
 				61C33E9820D3307F009ED5B2 /* FileUtil.swift */,
 				61CA767520ED8A1600C99CF5 /* Datalayer.swift */,
+				61BFC28320F25D18000B58FC /* FormatUtil.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 				61C33E9920D3307F009ED5B2 /* FileUtil.swift in Sources */,
 				61BFC28220F24614000B58FC /* TabBarVC.swift in Sources */,
 				61BFC27C20EED118000B58FC /* Player.swift in Sources */,
+				61BFC28420F25D18000B58FC /* FormatUtil.swift in Sources */,
 				61481E4120D43BF800B3DF39 /* LibraryVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

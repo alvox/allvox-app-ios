@@ -51,9 +51,7 @@ class RecorderVC: UIViewController {
     }
     
     @objc func setTime() {
-        let time = String(format: "%0.0f sec", Recorder.instance.getTime())
-        timerLbl.text = time
-        
+        timerLbl.text = formatDuration(seconds: Recorder.instance.getTime())
     }
     
 }
