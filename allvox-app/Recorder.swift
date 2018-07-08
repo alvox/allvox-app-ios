@@ -14,7 +14,7 @@ class Recorder: NSObject, AVAudioRecorderDelegate {
     static let instance = Recorder()
     
     private var session: AVAudioSession!
-    private var audioRecorder: AVAudioRecorder!
+    private var audioRecorder: AVAudioRecorder?
     private var recInfo: RecordingInfo?
     
     private(set) public var isRecording: Bool
@@ -37,8 +37,8 @@ class Recorder: NSObject, AVAudioRecorderDelegate {
         recInfo = RecordingInfo()
         do {
             audioRecorder = try AVAudioRecorder(url: (recInfo?.path)!, settings: audioFileSettings)
-            audioRecorder.delegate = self
-            audioRecorder.record()
+            audioRecorder!.delegate = self
+            audioRecorder!.record()
         } catch {
             debugPrint(error)
             stopRecording(success: false)
@@ -46,8 +46,8 @@ class Recorder: NSObject, AVAudioRecorderDelegate {
     }
     
     func stopRecording(success: Bool) {
-        recInfo?.finalize(duration: audioRecorder.currentTime)
-        audioRecorder.stop()
+        recInfo?.finalize(duration: audioRecorder!.currentTime)
+        audioRecorder!.stop()
         isRecording = false
         audioRecorder = nil
         if success {
@@ -75,8 +75,8 @@ class Recorder: NSObject, AVAudioRecorderDelegate {
     }
     
     func getTime() -> TimeInterval {
-        if let audioRecorder = audioRecorder {
-            return audioRecorder.currentTime
+        if let time = audioRecorder?.currentTime {
+            return time
         }
         return 0
     }
