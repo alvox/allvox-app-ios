@@ -30,11 +30,11 @@ class TabBarVC: UITabBarController {
     }
     
     private func setupRecBtn() {
-        recBtn.frame.size.width = 50
-        recBtn.frame.size.height = 50
+        recBtn.frame.size.width = 70
+        recBtn.frame.size.height = 70
         
-        let x = (self.view.frame.width / 2) - 25
-        let y = self.tabBar.frame.origin.y - 25
+        let x = (self.view.frame.width / 2) - 35
+        let y = self.tabBar.frame.origin.y - 35
         
         recBtn.frame.origin = CGPoint(x: x, y: y)
         

@@ -42,11 +42,10 @@
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CiN-3h-tLz" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8gE-m7-Exk">
-                    <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="8gE-m7-Exk">
+                    <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" red="0.69803921570000005" green="0.86666666670000003" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
-                    <state key="normal" title="REC"/>
+                    <state key="normal" image="mic"/>
                     <connections>
                         <action selector="recBtnPressed:" destination="brb-LY-02T" eventType="touchUpInside" id="7GX-3A-OEQ"/>
                     </connections>
@@ -204,4 +203,7 @@
             <point key="canvasLocation" x="-690" y="180"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="mic" width="90" height="90"/>
+    </resources>
 </document>
