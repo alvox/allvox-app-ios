@@ -31,9 +31,9 @@ class LibraryVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func backBtnPressed(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
+//    @IBAction func backBtnPressed(_ sender: Any) {
+//        dismiss(animated: true, completion: nil)
+//    }
     
     private func delete(idx: Int) {
         let recording = recordings.remove(at: idx)
