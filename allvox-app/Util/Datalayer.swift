@@ -15,9 +15,9 @@ func saveRecording(from recInfo: RecordingInfo) {
     guard let ctx = appDelegate?.persistentContainer.viewContext else {return}
     let recording = Recording(context: ctx)
     recording.id = recInfo.id
-    recording.name = recInfo.name
+    recording.displayName = recInfo.name
     recording.duration = Int64(recInfo.duration!)
-    recording.path = recInfo.path
+    recording.fileName = recInfo.path.lastPathComponent
     recording.timestamp = recInfo.date
     do {
         try ctx.save()
@@ -35,5 +35,31 @@ func getAllRecordings() -> [Recording] {
     } catch {
         debugPrint("Failed to get recordings from the db: \(error)")
         return []
+    }
+}
+
+func deleteRecording(recording: Recording) {
+    guard let ctx = appDelegate?.persistentContainer.viewContext else {return}
+    ctx.delete(recording)
+    do {
+        try ctx.save()
+    } catch {
+        debugPrint("Can't delete file, \(error)")
+    }
+}
+
+func deleteRecording(id: UUID) {
+    guard let ctx = appDelegate?.persistentContainer.viewContext else {return}
+    let request = NSFetchRequest<Recording>()
+    request.predicate = NSPredicate.init(format: "id == \(id)")
+    if let result = try? ctx.fetch(request) {
+        for object in result {
+            ctx.delete(object)
+        }
+    }
+    do {
+        try ctx.save()
+    } catch {
+        debugPrint("Error while deleting object, \(error)")
     }
 }
