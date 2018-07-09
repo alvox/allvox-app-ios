@@ -59,6 +59,16 @@ class Recorder: NSObject, AVAudioRecorderDelegate {
         recInfo = nil
     }
     
+    func pauseRecording() {
+        audioRecorder?.pause()
+        isRecording = false
+    }
+    
+    func continureRecording() {
+        audioRecorder?.record()
+        isRecording = true
+    }
+    
     func prepare() {
         session = AVAudioSession.sharedInstance()
         do {

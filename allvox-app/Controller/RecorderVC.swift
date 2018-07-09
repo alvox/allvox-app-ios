@@ -33,13 +33,19 @@ class RecorderVC: UIViewController {
     }
     
     @IBAction func pauseBtnPressed(_ sender: Any) {
+        if Recorder.instance.isRecording {
+            Recorder.instance.pauseRecording()
+            statusLbl.text = "Recording paused"
+            pauseBtn.setImage(UIImage(named: "recContinueBtn"), for: .normal)
+        } else {
+            Recorder.instance.continureRecording()
+            statusLbl.text = "Recording in progress"
+            pauseBtn.setImage(UIImage(named: "recPauseBtn"), for: .normal)
+        }
     }
     
     
     @IBAction func stopBtnPressed(_ sender: Any) {
-        if !Recorder.instance.isRecording {
-            return
-        }
         Recorder.instance.stopRecording(success: true)
         dismiss(animated: true, completion: nil)
     }
