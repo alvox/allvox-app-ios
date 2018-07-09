@@ -10,16 +10,16 @@ import UIKit
 
 class RecorderVC: UIViewController {
     
-    @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var timerLbl: UILabel!
-    @IBOutlet weak var recBtn: UIButton!
+    @IBOutlet weak var statusLbl: UILabel!
+    @IBOutlet weak var stopBtn: UIButton!
+    @IBOutlet weak var pauseBtn: UIButton!
     
     private var timer: Timer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(setTime), userInfo: nil, repeats: true)
-        spinner.isHidden = true
         Recorder.instance.prepare()
         startRecording()
     }
@@ -30,24 +30,18 @@ class RecorderVC: UIViewController {
     
     private func startRecording() {
         Recorder.instance.startRecording()
-        spinner.isHidden = false
-        spinner.startAnimating()
-        recBtn.setTitle("STOP", for: .normal)
     }
-
-    @IBAction func recBtnPressed(_ sender: Any) {
-        if Recorder.instance.isRecording {
-            Recorder.instance.stopRecording(success: true)
-            spinner.isHidden = true
-            spinner.stopAnimating()
-            recBtn.setTitle("REC", for: .normal)
-            dismiss(animated: true, completion: nil)
-        } else {
-            Recorder.instance.startRecording()
-            spinner.isHidden = false
-            spinner.startAnimating()
-            recBtn.setTitle("STOP", for: .normal)
+    
+    @IBAction func pauseBtnPressed(_ sender: Any) {
+    }
+    
+    
+    @IBAction func stopBtnPressed(_ sender: Any) {
+        if !Recorder.instance.isRecording {
+            return
         }
+        Recorder.instance.stopRecording(success: true)
+        dismiss(animated: true, completion: nil)
     }
     
     @objc func setTime() {

@@ -61,51 +61,60 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lec-yT-Oum">
-                                <rect key="frame" x="148" y="500" width="79" height="67"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="40"/>
-                                <state key="normal" title="REC">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="recBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l2k-W3-9au"/>
-                                </connections>
-                            </button>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="Vbr-Ap-q4b">
-                                <rect key="frame" x="137" y="283.5" width="100" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="DIp-NF-mmv"/>
-                                    <constraint firstAttribute="width" constant="100" id="xVc-uA-iQa"/>
-                                </constraints>
-                                <color key="color" red="0.16078431369999999" green="0.16862745100000001" blue="0.20392156859999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </activityIndicatorView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l15-WR-6wg">
-                                <rect key="frame" x="125" y="150" width="124" height="35"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Heavy" family="Avenir Next" pointSize="25"/>
+                                <rect key="frame" x="75.5" y="150" width="223.5" height="61.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Heavy" family="Avenir Next" pointSize="45"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N5V-tY-OCp">
+                                <rect key="frame" x="152.5" y="537" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="85f-up-LqE"/>
+                                    <constraint firstAttribute="width" constant="70" id="JDl-z1-CjH"/>
+                                </constraints>
+                                <state key="normal" image="recStopBtn"/>
+                                <connections>
+                                    <action selector="stopBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ucr-hw-Aw8"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recording in progress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eWl-bz-cpN">
+                                <rect key="frame" x="96" y="241" width="183" height="25"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="18"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="blP-RI-2y9">
+                                <rect key="frame" x="169" y="312" width="36" height="42"/>
+                                <state key="normal" image="recPauseBtn"/>
+                                <connections>
+                                    <action selector="pauseBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LYG-3e-YaA"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.69803921570000005" green="0.86666666670000003" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="lec-yT-Oum" secondAttribute="bottom" constant="100" id="AIw-rr-bLz"/>
-                            <constraint firstItem="Vbr-Ap-q4b" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="KDp-3C-Prh"/>
-                            <constraint firstItem="Vbr-Ap-q4b" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="e9a-ab-sli"/>
+                            <constraint firstItem="blP-RI-2y9" firstAttribute="top" secondItem="eWl-bz-cpN" secondAttribute="bottom" constant="46" id="3B3-AF-avQ"/>
+                            <constraint firstItem="blP-RI-2y9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4Y2-aH-TM3"/>
+                            <constraint firstItem="eWl-bz-cpN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Esz-Js-03Q"/>
+                            <constraint firstItem="N5V-tY-OCp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JPJ-nS-r23"/>
+                            <constraint firstItem="eWl-bz-cpN" firstAttribute="top" secondItem="l15-WR-6wg" secondAttribute="bottom" constant="30" id="ZyC-CR-o6a"/>
                             <constraint firstItem="l15-WR-6wg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="130" id="kSG-SD-Mbc"/>
-                            <constraint firstItem="lec-yT-Oum" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mjW-l3-Tt9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="N5V-tY-OCp" secondAttribute="bottom" constant="60" id="xxB-xg-dkf"/>
                             <constraint firstItem="l15-WR-6wg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yuW-dv-plK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="recBtn" destination="lec-yT-Oum" id="GJl-Db-wD8"/>
-                        <outlet property="spinner" destination="Vbr-Ap-q4b" id="2Xx-uP-27x"/>
+                        <outlet property="pauseBtn" destination="blP-RI-2y9" id="7Gg-PG-dXI"/>
+                        <outlet property="statusLbl" destination="eWl-bz-cpN" id="66T-At-o2Y"/>
+                        <outlet property="stopBtn" destination="N5V-tY-OCp" id="jka-qf-dfC"/>
                         <outlet property="timerLbl" destination="l15-WR-6wg" id="28R-Gp-FF8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-18" y="-125"/>
+            <point key="canvasLocation" x="-18.399999999999999" y="-125.4872563718141"/>
         </scene>
         <!--Library-->
         <scene sceneID="e0U-4b-o6K">
@@ -205,5 +214,7 @@
     </scenes>
     <resources>
         <image name="mic" width="90" height="90"/>
+        <image name="recPauseBtn" width="36" height="42"/>
+        <image name="recStopBtn" width="90" height="90"/>
     </resources>
 </document>
