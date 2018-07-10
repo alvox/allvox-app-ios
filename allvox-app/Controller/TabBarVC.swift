@@ -14,8 +14,8 @@ class TabBarVC: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupPlayer()
         setupRecBtn()
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,6 +39,17 @@ class TabBarVC: UITabBarController {
         recBtn.frame.origin = CGPoint(x: x, y: y)
         
         self.view.addSubview(recBtn)
+    }
+    
+    private func setupPlayer() {
+        let width = self.view.frame.width
+        let height = CGFloat(70)
+        let x = CGFloat(0)
+        let y = self.tabBar.frame.origin.y - 70
+        let playerView = UIView(frame: CGRect(x: x, y: y, width: width, height: height))
+        playerView.backgroundColor = #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1)
+        playerView.isHidden = false
+        self.view.addSubview(playerView)
     }
     
 
